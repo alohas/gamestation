@@ -1,0 +1,14 @@
+.hide {
+    display: none;
+}
+
+h3.metascore{
+    padding: 12px;
+}
+article > * {
+    display: inline-block;
+}
+
+article {
+    background-color: lightblue;
+}
