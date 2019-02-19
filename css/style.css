@@ -1,20 +1,40 @@
-.hide {
-    display: none;
-}
-
-h3.metascore{
+.metascore {
     padding: 12px;
 }
-article > * {
+
+article.list-item > * {
     display: inline-block;
 }
 
-article {
+article.list-item {
     background-color: lightblue;
 }
 
 
-.modal{
-    background-color: aqua;
+div.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(78, 78, 78, 0.6);
+    justify-content: center;
+    align-items: center;
 
+}
+
+.modal article {
+    background-color: crimson;
+    height: calc(100%-100px;);
+
+    margin-right: 6em;
+    margin-left: 6em;
+    margin-top: 3em;
+
+}
+
+
+
+.hide {
+    display: none;
 }
