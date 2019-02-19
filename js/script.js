@@ -1,7 +1,9 @@
 const template = document.querySelector("#myTemp").content;
+const templateModal = document.querySelector("#modalTemp").content;
 const main = document.querySelector("main");
-const modal = document.querySelector(".modal");
+const mainModal = document.querySelector(".forModals");
 
+const openModal = document.querySelector("button.modalOpen");
 
 const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
@@ -12,8 +14,13 @@ function loadJSON(link) {
 
 function displayGameData(item) {
 
+
     const clone = template.cloneNode("true");
-console.log(item);
+    const mClone = templateModal.cloneNode("true");
+    console.log(item);
+
+
+
     clone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
     clone.querySelector("h3.title").textContent = item.gsx$title.$t;
 
@@ -41,21 +48,42 @@ console.log(item);
         clone.querySelector(".price").textContent = item.gsx$price.$t + " Eur";
     }
 
+    clone.querySelector("button.modalOpen").setAttribute("id", item.gsx$id.$t);
+
+
+    mClone.querySelector("div").setAttribute("id", item.gsx$id.$t);
+    mClone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
+    mClone.querySelector("h3.title").textContent = item.gsx$title.$t;
+
+
+    mClone.querySelector(".metascore").textContent = item.gsx$metascore.$t;
 
 
 
 
-    clone.querySelector("article").addEventListener("click", () => {
-        fetch(item.id.$t).then(e => e.json()).then(data => showModal(data));
-    });
+
 
     main.appendChild(clone);
+    mainModal.appendChild(mClone);
 }
 
 
+
+function getId(clicked_id) {
+    console.log(clicked_id);
+    showModal(clicked_id);
+}
+
 function showModal(id) {
-    console.log(id);
-    modal.classList.remove("hide")
+    if (id < 10) {
+        const modal = document.querySelector("div#\\3" + id);
+        modal.classList.remove("hide");
+    } else if (id < 20) {
+        const modal = document.querySelector("div#\\31 " + (id-10));
+        modal.classList.remove("hide");
+
+
+    }
 }
 
 loadJSON(link);

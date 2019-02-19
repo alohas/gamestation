@@ -15,22 +15,15 @@
 
     </header>
 
-    <main></main>
+    <main>
+        <div class="forModals">
+
+        </div>
+    </main>
 
 
 
-    <div class="modal hide">
-        <article class="modal-content">
-            <h4 class="genres">fps</h4>
-            <h4 class="developer">trash games</h4>
-            <h4 class="publisher">we like money</h4>
-            <h4 class="relDate">1939-09-01</h4>
-            <h4 class="mode">we like money</h4>
-            <h4 class="platform">wood-pc</h4>
-            <h4 class="age">101</h4>
-            <p class="description">don't buy this</p>
-        </article>
-    </div>
+
 
 
 
@@ -40,7 +33,29 @@
             <h3 class="title">name</h3>
             <h3 class="metascore">69</h3>
             <h3 class="price">5</h3>
+            <button onclick="getId(this.id)" class="modalOpen">Details</button>
         </article>
+    </template>
+
+
+
+    <template id="modalTemp">
+        <div class="modal hide">
+            <article class="modal-content">
+                <img class="thumbnail" src="" alt="thumbnail">
+                <h3 class="title">name</h3>
+                <h3 class="metascore">69</h3>
+                <h3 class="price">5</h3>
+                <h4 class="genres">fps</h4>
+                <h4 class="developer">trash games</h4>
+                <h4 class="publisher">we like money</h4>
+                <h4 class="relDate">1939-09-01</h4>
+                <h4 class="mode">we like money</h4>
+                <h4 class="platform">wood-pc</h4>
+                <h4 class="age">101</h4>
+                <p class="description">don't buy this</p>
+            </article>
+        </div>
     </template>
 
     <script src="js/script.js"></script>
