@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="">
 <head>
-    <meta charset="UTF-8">
-    <title>template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
     <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <h1>Hi mom!</h1>
-    <script src="js/script.js"></script>
-</body>
 
+    <main></main>
+
+    <template>
+        <section>
+            <img  class="thumbnail" src="img/biomutant.jpg" alt="pic">
+            <h2 class="title"></h2>
+            <h3 class="price"></h3>
+            <h4 class="developer"></h4>
+            <h5 class="metascore"></h5>
+
+
+
+
+        </section>
+    </template>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const main = document.querySelector("main");
+        const template = document.querySelector("template").content;
+
+        const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
+
+        function loadJSON(link) {
+            fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayGameData));
+        }
+
+        function displayGameData(data) {
+            const clone = template.cloneNode("true");
+            clone.querySelector(".title").textContent = data.gsx$title.$t;
+
+            clone.querySelector(".metascore").textContent = "MetaScore:" + " " +data.gsx$metascore.$t;
+
+            clone.querySelector(".price").textContent = data.gsx$price.$t;
+
+            const img = data.gsx$imagename.$t;
+            clone.querySelector("img.thumbnail").src = "images/" + data.gsx$imagename.$t;
+            main.appendChild(clone);
+        }
+        loadJSON(link);
+    </script>
+</body>
 </html>
