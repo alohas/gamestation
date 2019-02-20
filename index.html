@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,55 @@
 
     <main></main>
 
+
+    <!-- module******************************************************* !-->
+    <div class="modal-bg hide">
+        <div class="modalGrid">
+            <section class="modal-content">
+                <button class="closeBtn">X</button>
+                <h1></h1>
+                <h2 id="pr"></h2>
+                <h5></h5>
+                <h3 class="mdtitle"></h3>
+                <h3 class="mdmetascore"></h3>
+                <h3 class="mdprice"></h3>
+                <h3 class="mdgenre"></h3>
+                <h3 class="mddeveloper"></h3>
+                <h3 class="mdpublisher"></h3>
+                <h3 class="mdreleaseDate"></h3>
+                <h3 class="mdplatform"></h3>
+                <h3 class="mddiscount"></h3>
+                <h3 class="mdageRange"></h3>
+            </section>
+            <img alt="img" class="modal_img">
+        </div>
+    </div>
+
+
+
+
+
+    <!-- end of module******************************************************* !-->
+
+
+    <!-- template******************************************************* !-->
+
     <template>
-        <section>
-            <img  class="thumbnail" src="img/biomutant.jpg" alt="pic">
+        <section class="section-wrapper">
+            <img class="thumbnail" src="img/biomutant.jpg" alt="pic">
             <h2 class="title"></h2>
             <h3 class="price"></h3>
             <h4 class="developer"></h4>
             <h5 class="metascore"></h5>
+            <button class="seemoreBTN">See more</button>
+
 
 
 
 
         </section>
     </template>
+    <!-- end of template******************************************************* !-->
 
 
 
@@ -37,26 +74,81 @@
     <script>
         const main = document.querySelector("main");
         const template = document.querySelector("template").content;
+        const modal = document.querySelector(".modal-bg");
+        const button = document.querySelector(".closeBtn");
+        let allData = [];
+        button.addEventListener("click", () => modal.classList.add("hide"));
+
+
 
         const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
+
+        /* template function*********************************************/
         function loadJSON(link) {
             fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayGameData));
         }
 
         function displayGameData(data) {
             const clone = template.cloneNode("true");
+            clone.querySelector(".seemoreBTN").setAttribute("id", `${data.gsx$id.$t}`)
             clone.querySelector(".title").textContent = data.gsx$title.$t;
 
-            clone.querySelector(".metascore").textContent = "MetaScore:" + " " +data.gsx$metascore.$t;
+            clone.querySelector(".metascore").textContent = "MetaScore:" + " " + data.gsx$metascore.$t;
 
             clone.querySelector(".price").textContent = data.gsx$price.$t;
+
+
+            console.log(data);
 
             const img = data.gsx$imagename.$t;
             clone.querySelector("img.thumbnail").src = "images/" + data.gsx$imagename.$t;
             main.appendChild(clone);
+            allData.push(data)
         }
+        /* template function*********************************************/
         loadJSON(link);
+        /* modal function*********************************************/
+
+
+
+        document.addEventListener('click', function(e){
+            let targetClass = e.target.getAttribute('class')
+            if( targetClass == 'seemoreBTN'){
+
+            let targetId = e.target.getAttribute('id')
+            console.log(targetId)
+
+
+            allData.forEach(function(gameObject) {
+
+                if(gameObject.gsx$id.$t == targetId){
+                    console.log(gameObject.gsx$title.$t);
+                    modal.querySelector('h3').innerHTML = gameObject.gsx$title.$t;
+                    modal.querySelector('img').src = "images/" + gameObject.gsx$imagename.$t;
+                    modal.querySelector('.mdprice').innerHTML = gameObject.gsx$price.$t + "$";
+                    modal.querySelector('.mdgenre').innerHTML = gameObject.gsx$genre.$t;
+                    modal.querySelector('.mdplatform').innerHTML = gameObject.gsx$platform.$t;
+                    modal.querySelector('.mdmetascore').innerHTML = gameObject.gsx$metascore.$t;
+
+
+                }
+                });
+
+            modal.style.display = "flex"
+
+            }else if(targetClass == 'closeBtn'){
+                modal.style.display = "none"
+            }else{
+                console.log('not a button')
+            }
+        })
+
+
+
+
+
     </script>
 </body>
+
 </html>

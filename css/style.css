@@ -4,14 +4,24 @@ body {
 padding: 0;
     margin: 0;
 }
+h1,h2,h3,h4,h5,h6,p,nav{
+text-transform: capitalize;
+}
 
+/* grid************************************************/
 
 main{
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           grid-gap: 2em;
 
 }
+
+/* </grid************************************************/
+
+
+/* section************************************************/
+
 section{
 margin: .2em;
           padding: 1em;
@@ -25,6 +35,110 @@ color: #fff;
 
 }
 
-.metascore {
+section img {
+border-radius: 10px;
+width: 100%
 
+}
+section p {
+
+border: 1px solid;
+    width: 40%;
+    padding: .5em 1em;
+   border-radius: 5px;
+    background: #333;
+    color: #fff;
+
+}
+
+section:hover{
+background-color: rgb(90, 10, 55);
+
+}
+
+
+/* </section************************************************/
+
+
+/* Buttons************************************************/
+.seemoreBTN{
+background-color: #333;
+    padding: 1em 2em;
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 5%;
+    border: none;
+}
+.seemoreBTN:hover{
+    background-color: #505050;
+    color: #fafafa;
+
+
+
+}
+.closeBTN{
+background-color: #333;
+    padding: 1em 2em;
+    border-radius: 5px;
+    width: 5%;
+    border: none;
+   margin-bottom: .5em;
+}
+
+.closeBTN:hover{
+background-color: #505050;
+
+}
+
+button{
+    cursor: pointer;
+}
+
+/* Buttons************************************************/
+
+/* modal************************************************/
+
+.hide{
+display:none;
+}
+
+modal_img{
+width: 100%;
+    border-radius: 10px;
+}
+
+.long_dcp{
+text-decoration: none;
+    border: none;
+    background-color: #000;
+    font-size: 1.1em;
+}
+
+
+.modal-bg{
+position: fixed;
+top: 0;
+left: 0;
+height: 100vh;
+width: 100%;
+background-color:rgba(78, 78, 78, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modalGrid{
+width: 1000px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+background-color: #000;
+    grid-gap: 20px;
+padding: 2em;
+    border-radius: 7px;
+}
+.closeBtn {
+    background-color: blue;
+    border:1px dotted darkblue;
 }
