@@ -30,7 +30,8 @@
                 <h3 class="mdreleaseDate"></h3>
                 <h3 class="mdplatform"></h3>
                 <h3 class="mddiscount"></h3>
-                <h3 class="mdageRange"></h3>
+                <h3 class="mdagerange"></h3>
+                <h3 class="mddescription"></h3>
             </section>
             <img alt="img" class="modal_img">
         </div>
@@ -112,40 +113,42 @@
 
 
 
-        document.addEventListener('click', function(e){
+        document.addEventListener('click', function(e) {
             let targetClass = e.target.getAttribute('class')
-            if( targetClass == 'seemoreBTN'){
+            if (targetClass == 'seemoreBTN') {
 
-            let targetId = e.target.getAttribute('id')
-            console.log(targetId)
-
-
-            allData.forEach(function(gameObject) {
-
-                if(gameObject.gsx$id.$t == targetId){
-                    console.log(gameObject.gsx$title.$t);
-                    modal.querySelector('h3').innerHTML = gameObject.gsx$title.$t;
-                    modal.querySelector('img').src = "images/" + gameObject.gsx$imagename.$t;
-                    modal.querySelector('.mdprice').innerHTML = gameObject.gsx$price.$t + "$";
-                    modal.querySelector('.mdgenre').innerHTML = gameObject.gsx$genre.$t;
-                    modal.querySelector('.mdplatform').innerHTML = gameObject.gsx$platform.$t;
-                    modal.querySelector('.mdmetascore').innerHTML = gameObject.gsx$metascore.$t;
+                let targetId = e.target.getAttribute('id')
+                console.log(targetId)
 
 
-                }
+                allData.forEach(function(gameObject) {
+
+                    if (gameObject.gsx$id.$t == targetId) {
+                        console.log(gameObject.gsx$title.$t[0]);
+                        modal.querySelector('h3').innerHTML = gameObject.gsx$title.$t;
+                        modal.querySelector('img').src = "images/" + gameObject.gsx$imagename.$t;
+                        modal.querySelector('.mdprice').innerHTML = gameObject.gsx$price.$t + "$";
+                        modal.querySelector('.mdgenre').innerHTML = gameObject.gsx$genre.$t;
+                         modal.querySelector('.mdmetascore').innerHTML = gameObject.gsx$metascore.$t;
+                        modal.querySelector('.mdplatform').innerHTML = gameObject.gsx$platform.$t;
+
+                        modal.querySelector('.mddiscount').innerHTML = gameObject.gsx$discount.$t;
+                        modal.querySelector('.mdagerange').innerHTML = gameObject.gsx$agerange.$t;
+                        modal.querySelector('.mddescription').innerHTML = gameObject.gsx$description.$t;
+
+
+                    }
                 });
 
-            modal.style.display = "flex"
+                modal.style.display = "flex"
 
-            }else if(targetClass == 'closeBtn'){
+            } else if (targetClass == 'closeBtn') {
                 modal.style.display = "none"
-            }else{
+            } else {
                 console.log('not a button')
             }
         })
-
-
-
+                /* </modal function*********************************************/
 
 
     </script>

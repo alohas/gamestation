@@ -85,10 +85,7 @@ background-color: #333;
    margin-bottom: .5em;
 }
 
-.closeBTN:hover{
-background-color: #505050;
 
-}
 
 button{
     cursor: pointer;
