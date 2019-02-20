@@ -9,11 +9,22 @@
 </head>
 
 <body>
-    <header>
-        <h1>Welcome</h1>
-        <h2>To gamers presented by gamers</h2>
 
+   <div id="blackHeader"> </div> <!-- here is inserted the logo -->
+
+    <header>
+        <h1>g4mest4tion</h1>
+        <h2>For gamers by gamers</h2>
     </header>
+
+    <nav>
+        <ul>
+            <li> <a href="#"> <button> Home </button></a> </li>
+            <li> <a href="#"> <button> MainPIX </button> </a> </li>
+            <li> <a href="#"> <button> Documentation </button> </a> </li>
+        </ul>
+    </nav>
+
 
     <main>
         <div class="forModals">
@@ -21,18 +32,23 @@
         </div>
     </main>
 
-
-
-
-
-
-
     <template id="myTemp">
         <article class="list-item">
-            <img class="thumbnail" src="" alt="thumbnail">
-            <h3 class="title">name</h3>
+
+<div id="gridStyling">
+    <div id="win95">
+        <h3 class="title"> name </h3>
+        <button class="xButton"> X </button>
+    </div>
+    <div id="thumbnail">
+        <img class="thumbnail" src="" alt="thumbnail">
+    </div>
+</div>
+            <p class="shortDescription"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
             <h3 class="metascore">69</h3>
-            <h3 class="price">5</h3>
+            <p> <b> Genre: </b> <br> <span class="genre"> </span> </p>
+            <p> <b> Release date: </b> <br> <span class="relDate"> </span> </p>
+            <h3 class="price hide">5</h3>
             <button onclick="getIdShow(this.id)" class="modalOpen">Details</button>
         </article>
     </template>
@@ -42,19 +58,23 @@
     <template id="modalTemp">
         <div class="modal hide">
             <article class="modal-content">
-                <img class="thumbnail" src="" alt="thumbnail">
-                <h3 class="title">name</h3>
-                <h3 class="metascore">69</h3>
-                <h3 class="price">5</h3>
-                <h4 class="genres">fps</h4>
-                <h4 class="developer">trash games</h4>
-                <h4 class="publisher">we like money</h4>
-                <h4 class="relDate">1939-09-01</h4>
-                <h4 class="mode">we like money</h4>
-                <h4 class="platform">wood-pc</h4>
+                <img class="thumbnailM" src="" alt="thumbnail">
+                <h3 class="titleM">name</h3>
+                <h3 class="metascoreM hide">69</h3>
+                <div id="detailsM">
+                <p> Price: <span class="priceM">5</span> </p>
+                <p> Genres: <span class="genresM">fps</span> </p>
+                <p> Developer: <span class="developerM">trash games</span> </p>
+                <p> Publisher: <span class="publisherM">we like money</span> </p>
+                <p> Release Date: <span class="relDateM">1939-09-01</span> </p>
+                <p> Modes Available <span class="modeM">we like money</span> </p>
+                <p> Platform(s): <span class="platformM">wood-pc</span> </p>
+                </div>
                 <img class="age" src="" alt="range">
-                <p class="description">don't buy this</p>
-                <button class="modalHide" onclick="getIdHide(this.id)">Close</button>
+                <p class="descriptionM">don't buy this</p>
+                <button class="modalHide" onclick="getIdHide(this.id)"> &times </button>
+                <button class="buyM"> Buy </button>
+                <button class="pirateM"> Pirate </button>
             </article>
         </div>
     </template>

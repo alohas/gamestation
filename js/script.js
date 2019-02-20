@@ -24,53 +24,72 @@ function displayGameData(item) {
 
 
     clone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
-    mClone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
+    mClone.querySelector(".thumbnailM").src = "images/" + item.gsx$imagename.$t;
     clone.querySelector("h3.title").textContent = item.gsx$title.$t;
-    mClone.querySelector("h3.title").textContent = item.gsx$title.$t;
+    mClone.querySelector("h3.titleM").textContent = item.gsx$title.$t;
 
 
     clone.querySelector(".metascore").textContent = item.gsx$metascore.$t;
-    mClone.querySelector(".metascore").textContent = item.gsx$metascore.$t;
+    mClone.querySelector(".metascoreM").textContent = item.gsx$metascore.$t;
     if (item.gsx$metascore.$t >= 75) {
-        clone.querySelector(".metascore").style.backgroundColor = "#6c3";
-        mClone.querySelector(".metascore").style.backgroundColor = "#6c3";
+        clone.querySelector(".metascore").style.backgroundColor = "#11FF00";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#11FF00";
     } else if (item.gsx$metascore.$t >= 50) {
-        clone.querySelector(".metascore").style.backgroundColor = "#fc3";
-        mClone.querySelector(".metascore").style.backgroundColor = "#fc3";
+        clone.querySelector(".metascore").style.backgroundColor = "#FFE600";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#FFE600";
     } else if (item.gsx$metascore.$t == false) {
         clone.querySelector(".metascore").style.display = "none";
-        mClone.querySelector(".metascore").style.display = "none";
+        mClone.querySelector(".metascoreM").style.display = "none";
     } else {
         clone.querySelector(".metascore").style.backgroundColor = "#f00";
-        mClone.querySelector(".metascore").style.backgroundColor = "#f00";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#f00";
     }
 
+        /* Genre and Release Date Converter added */
 
+        clone.querySelector(".genre").textContent = item.gsx$genre.$t;
+
+        var dateToConvert = new Date(item.gsx$releasedate.$t);
+
+        var monthsTotal = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+        var date = dateToConvert.getDate();
+        var month = dateToConvert.getMonth();
+        var year = dateToConvert.getFullYear();
+
+        var dateReleased = date + " " + monthsTotal[month] + " " + year;
+
+        clone.querySelector(".relDate").textContent = dateReleased;
 
     if (item.gsx$discount.$t) {
         clone.querySelector(".price").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";
-        mClone.querySelector(".price").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";;
+        mClone.querySelector(".priceM").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";;
     } else if (item.gsx$price.$t === "free") {
         clone.querySelector(".price").textContent = "FREE";
-        mClone.querySelector(".price").textContent = "FREE";
+        mClone.querySelector(".priceM").textContent = "FREE";
     } else if (item.gsx$price.$t == false) {
         clone.querySelector(".price").textContent = "Coming Soon";
-        mClone.querySelector(".price").textContent = "Coming Soon";
+        mClone.querySelector(".priceM").textContent = "Coming Soon";
     } else {
         clone.querySelector(".price").textContent = item.gsx$price.$t + " Eur";
-        mClone.querySelector(".price").textContent = item.gsx$price.$t + " Eur";
+        mClone.querySelector(".priceM").textContent = item.gsx$price.$t + " Eur";
     }
 
     clone.querySelector("button.modalOpen").setAttribute("id", item.gsx$id.$t);
     mClone.querySelector("button.modalHide").setAttribute("id", item.gsx$id.$t);
 
-    mClone.querySelector(".genres").textContent = item.gsx$genre.$t;
-    mClone.querySelector(".developer").textContent = item.gsx$developer.$t;
-    mClone.querySelector(".publisher").textContent = item.gsx$publisher.$t;
-    mClone.querySelector(".relDate").textContent = item.gsx$releasedate.$t;
-    mClone.querySelector(".mode").textContent = item.gsx$mode.$t;
-    mClone.querySelector(".platform").textContent = item.gsx$platform.$t;
-    mClone.querySelector(".description").textContent = item.gsx$description.$t;
+    mClone.querySelector(".genresM").textContent = item.gsx$genre.$t;
+    mClone.querySelector(".developerM").textContent = item.gsx$developer.$t;
+    mClone.querySelector(".publisherM").textContent = item.gsx$publisher.$t;
+    mClone.querySelector(".relDateM").textContent = dateReleased;
+    mClone.querySelector(".modeM").textContent = item.gsx$mode.$t;
+    mClone.querySelector(".platformM").textContent = item.gsx$platform.$t;
+    mClone.querySelector(".descriptionM").textContent = item.gsx$description.$t;
 
 
 
