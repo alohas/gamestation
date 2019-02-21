@@ -12,6 +12,19 @@ body {
     overflow-x: hidden;
 }
 
+
+#overlay{
+    height: 100%;
+    width: 100%;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+
+
+
+}
 .windows98 {
     position: absolute;
     top: 40%;
