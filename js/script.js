@@ -66,6 +66,8 @@ function displayGameData(item) {
 
         clone.querySelector(".relDate").textContent = dateReleased;
 
+        clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
+
     if (item.gsx$discount.$t) {
         clone.querySelector(".price").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";
         mClone.querySelector(".priceM").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";;
@@ -114,8 +116,6 @@ function displayGameData(item) {
     mainModal.appendChild(mClone);
 }
 
-
-
 function getIdShow(clicked_id) {
     console.log(clicked_id);
     showModal(clicked_id);
@@ -146,7 +146,6 @@ function hideModal(id) {
     }
 }
 
-
-
-
 loadJSON(link);
+
+
