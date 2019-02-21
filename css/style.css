@@ -12,43 +12,70 @@ body {
     overflow-x: hidden;
 }
 
-.spinner {
-    width: 80px;
-    height: 80px;
-    border: 2px solid #f3f3f3;
+.windows98 {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-top: 3px solid #f25a41;
-    border-radius: 100%;
-   animation: spin 1s infinite linear;
-
-
+    top: 40%;
+        left:50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
 
 
 }
 
-@keyframes spin {
-    from {
-       transform: rotate(0deg);
-    }to{
-        transform: rotate(360deg);
-
-}
-
-}
-#overlay{
-height: 100%;
-    width: 100%;
-    background: darkblue;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 9999;
+.container {
+    height: 20px;
+    width: 140px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    overflow: hidden;
+    transform: translate(-50%, -0%);
     }
+
+
+.loader {
+    height: 16px;
+    width: 10px;
+    float: left;
+    background: #fff;
+    margin-top: 2px;
+    margin-left: 5px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 12px blue;
+    position: relative;
+    left: -50px;
+    animation: move1 2s linear infinite;
+    }
+
+@keyframes move1 {
+    97% {
+        left: 150px;
+        opacity: 1;
+    }
+    98%{
+      opacity: 0;
+        left: 150px;
+    }
+    99%{
+        left: -50px;
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+}
+
+}
+
+
+
+
+
+
+
+
 
 
 
