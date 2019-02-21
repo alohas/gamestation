@@ -209,9 +209,9 @@ div.modal {
     background-color: rgba(78, 78, 78, 0.6);
     overflow: auto;
 }
-
+/* the modal  that needs to be changed for mobbile view */
 .modal-content {
-    background-color: white;;
+    background-color: white;
     width: 650px;
     height: 450px;
     display: grid;
@@ -220,6 +220,8 @@ div.modal {
     padding: 0px 30px;
     font-family: 'Times New Romans';
     background-color: #DADADA;
+    margin: 0 auto;
+    margin-top: 10em;
 }
 
 h3.titleM {
@@ -302,5 +304,48 @@ button.buyM {
 
 button.pirateM {
     margin-top: 370px;
+
+}
+
+
+
+@media all and (max-width: 770px) {
+
+    .modal-content{
+        display: block;
+        height:auto;
+text-overflow:inherit;
+        text-align: left;
+        margin: 1em;
+padding-top: 1em;
+
+}
+
+    .modalHide{
+        float: right;
+}
+
+button.buyM, button.pirateM {
+ margin: 0;
+    padding: 0;
+    position: relative;
+    margin-bottom: 2em;
+    position: static;
+
+
+}
+    img.age{
+        margin:0;
+        position: static;
+        margin-bottom: 1em;
+        float: right;
+
+}
+    img.thumbnailM{
+        margin: 0 auto;
+        padding: 0 auto;
+
+
+}
 
 }
