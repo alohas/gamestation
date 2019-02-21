@@ -222,6 +222,9 @@ div.modal {
     background-color: #DADADA;
     margin: 0 auto;
     margin-top: 10em;
+    height: auto;
+    padding-bottom: 2em;
+
 }
 
 h3.titleM {
@@ -322,7 +325,12 @@ padding-top: 1em;
 }
 
     .modalHide{
-        float: right;
+        top: 0;
+        right: 0;
+        position: absolute;
+        margin-right: 2.4em;
+        margin-top: 1.8em;
+
 }
 
 button.buyM, button.pirateM {
@@ -342,10 +350,25 @@ button.buyM, button.pirateM {
 
 }
     img.thumbnailM{
-        margin: 0 auto;
-        padding: 0 auto;
+        margin:  auto;
+        padding: 0auto;
+        height: auto;
 
 
 }
 
 }
+
+
+
+nav li {
+       display: inline;
+       margin: 1em;
+        text-align: center;
+
+
+
+       }
+nav {width: 100%;
+}
+
