@@ -20,7 +20,6 @@ const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMS
 function preloader(secs){
     if (secs >= 4) {
       document.getElementById("overlay").style.display = "none";
-      document.getElementById("content").style.display = "block";
     } else {
       setTimeout(function(){preloader(secs+1);},1000);
     }
