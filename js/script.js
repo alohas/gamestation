@@ -10,6 +10,27 @@ const openModal = document.querySelector("button.modalOpen");
 const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
 
+//the preloader *************************
+//var overlay = document.getElementById("overlay");
+
+//window.addEventListener("load" , function(){
+//overlay.style.display = "none";
+
+//})
+function preloader(secs){
+    if (secs >= 4) {
+      document.getElementById("overlay").style.display = "none";
+    } else {
+      setTimeout(function(){preloader(secs+1);},1000);
+    }
+  }
+  window.onload = preloader(0);
+
+
+//</preloader end ******************************
+
+
+
 function loadJSON(link) {
     fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayGameData));
 }
