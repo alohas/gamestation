@@ -10,6 +10,10 @@ const openModal = document.querySelector("button.modalOpen");
 const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
 
+
+
+
+
 function loadJSON(link) {
     fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayGameData));
 }
@@ -20,6 +24,13 @@ function displayGameData(item) {
     const clone = template.cloneNode("true");
     const mClone = templateModal.cloneNode("true");
     console.log(item);
+
+    const article = clone.querySelector(".list-item");
+
+
+    item.gsx$genre.$t.split(", ").forEach(genre => {
+        article.classList.add(genre);
+    })
 
 
 
@@ -45,36 +56,39 @@ function displayGameData(item) {
         mClone.querySelector(".metascoreM").style.backgroundColor = "#f00";
     }
 
-        /* Genre and Release Date Converter added */
+    /* Genre and Release Date Converter added */
 
-        clone.querySelector(".genre").textContent = item.gsx$genre.$t;
+    clone.querySelector(".genre").textContent = item.gsx$genre.$t;
 
-        var dateToConvert = new Date(item.gsx$releasedate.$t);
 
-        var monthsTotal = [
+    var dateToConvert = new Date(item.gsx$releasedate.$t);
+
+    var monthsTotal = [
     "January", "February", "March",
     "April", "May", "June", "July",
     "August", "September", "October",
     "November", "December"
   ];
 
-        var date = dateToConvert.getDate();
-        var month = dateToConvert.getMonth();
-        var year = dateToConvert.getFullYear();
+    var date = dateToConvert.getDate();
+    var month = dateToConvert.getMonth();
+    var year = dateToConvert.getFullYear();
 
-        var dateReleased = date + " " + monthsTotal[month] + " " + year;
+    var dateReleased = date + " " + monthsTotal[month] + " " + year;
 
-        clone.querySelector(".relDate").textContent = dateReleased;
+    clone.querySelector(".relDate").textContent = dateReleased;
 
     if (item.gsx$discount.$t) {
         clone.querySelector(".price").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";
         mClone.querySelector(".priceM").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";;
     } else if (item.gsx$price.$t === "free") {
         clone.querySelector(".price").textContent = "FREE";
+        article.classList.add(item.gsx$price.$t);
         mClone.querySelector(".priceM").textContent = "FREE";
     } else if (item.gsx$price.$t == false) {
         clone.querySelector(".price").textContent = "Coming Soon";
         mClone.querySelector(".priceM").textContent = "Coming Soon";
+        article.classList.add("Unreleased");
     } else {
         clone.querySelector(".price").textContent = item.gsx$price.$t + " Eur";
         mClone.querySelector(".priceM").textContent = item.gsx$price.$t + " Eur";
@@ -95,15 +109,15 @@ function displayGameData(item) {
 
 
 
-    if(item.gsx$agerange.$t>=18){
+    if (item.gsx$agerange.$t >= 18) {
         mClone.querySelector(".age").src = "images/age18.jpg"
-    } else if(item.gsx$agerange.$t>=16){
+    } else if (item.gsx$agerange.$t >= 16) {
         mClone.querySelector(".age").src = "images/age16.jpg"
-    } else if(item.gsx$agerange.$t>=12){
+    } else if (item.gsx$agerange.$t >= 12) {
         mClone.querySelector(".age").src = "images/age12.jpg"
-    } else if(item.gsx$agerange.$t>=7){
+    } else if (item.gsx$agerange.$t >= 7) {
         mClone.querySelector(".age").src = "images/age7.jpg"
-    } else if(item.gsx$agerange.$t>=3){
+    } else if (item.gsx$agerange.$t >= 3) {
         mClone.querySelector(".age").src = "images/age3.jpg"
     }
 
@@ -146,7 +160,26 @@ function hideModal(id) {
     }
 }
 
+let filter = document.querySelectorAll(".filter");
 
+console.log(filter);
+
+filter.forEach(filterOut);
+
+function filterOut(a) {
+    a.addEventListener("click", e => {
+        const all = document.querySelectorAll(".list-item")
+        console.log(e.target.dataset.filter);
+        all.forEach(a => {
+            if (a.classList.contains(e.target.dataset.filter)) {
+                a.classList.remove("hide");
+            } else {
+                a.classList.add("hide");
+            }
+        })
+
+    });
+};
 
 
 loadJSON(link);
