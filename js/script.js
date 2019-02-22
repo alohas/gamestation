@@ -42,6 +42,10 @@ function displayGameData(item) {
     const mClone = templateModal.cloneNode("true");
     console.log(item);
 
+    const article = clone.querySelector(".list-item");
+    item.gsx$genre.$t.split(", ").forEach(genre => {
+        article.classList.add(genre);
+    })
 
 
     clone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
@@ -95,9 +99,11 @@ function displayGameData(item) {
     } else if (item.gsx$price.$t === "free") {
         clone.querySelector(".price").textContent = "FREE";
         mClone.querySelector(".priceM").textContent = "FREE";
+        article.classList.add(item.gsx$price.$t);
     } else if (item.gsx$price.$t == false) {
         clone.querySelector(".price").textContent = "Coming Soon";
         mClone.querySelector(".priceM").textContent = "Coming Soon";
+        article.classList.add("Unreleased");
     } else {
         clone.querySelector(".price").textContent = item.gsx$price.$t + " Eur";
         mClone.querySelector(".priceM").textContent = item.gsx$price.$t + " Eur";
@@ -169,4 +175,23 @@ function hideModal(id) {
 
 loadJSON(link);
 
+let filter = document.querySelectorAll(".filter");
 
+console.log(filter);
+
+filter.forEach(filterOut);
+
+function filterOut(a) {
+    a.addEventListener("click", e => {
+        const all = document.querySelectorAll(".list-item")
+        console.log(e.target.dataset.filter);
+        all.forEach(a => {
+            if (a.classList.contains(e.target.dataset.filter)) {
+                a.classList.remove("hide");
+            } else {
+                a.classList.add("hide");
+            }
+        })
+
+    });
+};
