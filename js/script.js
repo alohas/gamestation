@@ -10,6 +10,27 @@ const openModal = document.querySelector("button.modalOpen");
 const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
 
+//the preloader *************************
+//var overlay = document.getElementById("overlay");
+
+//window.addEventListener("load" , function(){
+//overlay.style.display = "none";
+
+//})
+function preloader(secs){
+    if (secs >= 4) {
+      document.getElementById("overlay").style.display = "none";
+    } else {
+      setTimeout(function(){preloader(secs+1);},1000);
+    }
+  }
+  window.onload = preloader(0);
+
+
+//</preloader end ******************************
+
+
+
 function loadJSON(link) {
     fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayGameData));
 }
@@ -21,6 +42,10 @@ function displayGameData(item) {
     const mClone = templateModal.cloneNode("true");
     console.log(item);
 
+    const article = clone.querySelector(".list-item");
+    item.gsx$genre.$t.split(", ").forEach(genre => {
+        article.classList.add(genre);
+    })
 
 
     clone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
@@ -74,9 +99,11 @@ function displayGameData(item) {
     } else if (item.gsx$price.$t === "free") {
         clone.querySelector(".price").textContent = "FREE";
         mClone.querySelector(".priceM").textContent = "FREE";
+        article.classList.add(item.gsx$price.$t);
     } else if (item.gsx$price.$t == false) {
         clone.querySelector(".price").textContent = "Coming Soon";
         mClone.querySelector(".priceM").textContent = "Coming Soon";
+        article.classList.add("Unreleased");
     } else {
         clone.querySelector(".price").textContent = item.gsx$price.$t + " Eur";
         mClone.querySelector(".priceM").textContent = item.gsx$price.$t + " Eur";
@@ -148,4 +175,23 @@ function hideModal(id) {
 
 loadJSON(link);
 
+let filter = document.querySelectorAll(".filter");
 
+console.log(filter);
+
+filter.forEach(filterOut);
+
+function filterOut(a) {
+    a.addEventListener("click", e => {
+        const all = document.querySelectorAll(".list-item")
+        console.log(e.target.dataset.filter);
+        all.forEach(a => {
+            if (a.classList.contains(e.target.dataset.filter)) {
+                a.classList.remove("hide");
+            } else {
+                a.classList.add("hide");
+            }
+        })
+
+    });
+};
