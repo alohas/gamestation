@@ -51,7 +51,8 @@ header h1 {
     margin-top: 100px;
 }
 
-header h1,h2 {
+header h1,
+h2 {
     font-family: "Press Start 2P";
     text-align: center;
     color: white;
@@ -101,10 +102,10 @@ main {
 }
 
 main article {
-   margin-top: 20px;
-   height: 500px;
-   border: 1px solid black;
-   width: 300px;
+    margin-top: 20px;
+    height: 500px;
+    border: 1px solid black;
+    width: 300px;
 }
 
 /* Top of flex item styling */
@@ -119,15 +120,6 @@ main article {
     background-color: #002B45;
     color: white;
     display: inline;
-}
-
-.xButton {
-    display: inline;
-    float: right;
-    margin-top: -45px;
-    margin-right: 8px;
-    background-color: gainsboro;
-    font-size: 20px;
 }
 
 .title {
@@ -172,17 +164,13 @@ p:not(.shortDescription) {
 }
 
 button.modalOpen {
-    margin-left: 70px;
-    font-size: 18px;
-    padding: 5px 25px;
-    width: 150px;
-    padding: 5px 20px;
-    background-color: #C3C3C;
+    padding: 3px 20px;
+    height: 37px;
+    margin-left: -2px;
+    background-color: #C3C3C3;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Roboto';
-    box-shadow: 2px 2px 1px black;
-    border: 1.5px solid black;
 }
 
 button.modalOpen:hover {
@@ -193,26 +181,65 @@ button.modalOpen:hover {
 }
 
 /* Modal for mobile */
-@media screen and (min-width: 0px) {
 
-    .modal-content {
-    background-color: white;
-    width: 320px;
+img.thumbnailM {
+    width: 280px;
+}
+
+.titleM {
+    color: white;
+    background-color: #002B45;
+    padding: 10px 20px;
+}
+
+.age {
+    width: 30px;
+    position: absolute;
+    margin-top: -250px;
+    margin-left: 245px;
+}
+
+div.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(78, 78, 78, 0.6);
+    overflow: auto;
+}
+
+#detailsM {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.modal-content {
+    width: 280px;
     height: 450px;
     padding: 0px 30px;
     font-family: 'Times New Romans';
     background-color: #DADADA;
     margin: 0 auto;
-    margin-top: 10em;
+    margin-top: 100px;
     height: auto;
     padding-bottom: 2em;
-
 }
 
-img.thumbnailM {
-    width: 100px;
-}
-}
+button.pirateM:hover {
+        cursor: pointer;
+        background-color: #002B45;
+        color: white;
+        border: 1px solid white;
+    }
+
+button.buyM:hover {
+        cursor: pointer;
+        background-color: #002B45;
+        color: white;
+        border: 1px solid white;
+    }
+
 
 @media screen and (min-width: 440px) {
 
@@ -229,7 +256,7 @@ img.thumbnailM {
         margin-right: 25px;
         font-size: 18px;
         padding: 5px 25px;
-        font-family:  'MS Reference Sans Serif';
+        font-family: 'MS Reference Sans Serif';
         box-shadow: 1px 1px 5px black;
     }
 
@@ -242,16 +269,37 @@ img.thumbnailM {
 
     /* Glitchy Effect */
 
-#onTopGlitch {
-    position: absolute;
-    z-index: 1;
-    opacity: 0.5;
-}
+    #onTopGlitch {
+        position: absolute;
+        z-index: 1;
+        opacity: 0.5;
+    }
 
     #onTopGlitch img {
-    width: 400px;
-    height: 490px;
-}
+        width: 400px;
+        height: 490px;
+    }
+
+    .modalHide {
+        padding: 3px 10px;
+        background-color: #C3C3C3;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: 'Roboto';
+        position: absolute;
+        margin-top: -543.5px;
+        margin-left: 245px;
+    }
+
+    .buyM,
+    .pirateM {
+        width: 150px;
+        padding: 10px 20px;
+        background-color: #C3C3C3;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: 'Roboto';
+    }
 
 }
 
@@ -259,186 +307,199 @@ img.thumbnailM {
     main {
         display: flex;
     }
+
     article {
         width: 300px;
     }
-}
 
-/* Modal available just for high-width screens */
+    /* Modal available just for high-width screens */
 
-div.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(78, 78, 78, 0.6);
-    overflow: auto;
-}
-/* the modal  that needs to be changed for mobbile view */
-.modal-content {
-    background-color: white;
-    width: 650px;
-    height: 450px;
-    display: grid;
-    grid-template-columns: repeat(7, 92.8px);
-    grid-template-rows: 80px repeat(6, 63.1px);
-    padding: 0px 30px;
-    font-family: 'Times New Romans';
-    background-color: #DADADA;
-    margin: 0 auto;
-    margin-top: 10em;
-    height: auto;
-    padding-bottom: 2em;
-
-}
-
-h3.titleM {
-    grid-row: 1/span 1;
-    grid-column: 1/span 7;
-    color: white;
-    padding: 10px 15px;
-    background-color: #002B45;
-    font-family: 'MS Reference Sans Serif';
-}
-
-.modalHide {
-    grid-row: 1/span 1;
-    grid-column: 5/span 1;
-    width: 48px;
-    height: 35px;
-    margin-top: 23px;
-    margin-left: 225px;
-    font-size: 30px;
-}
-
-img.thumbnailM {
-    grid-row: 2/span 3;
-    grid-column: 1/span 4;
-    width: 100%;
-}
-
-.metascoreM {
-    position: absolute;
-    margin-top: 10px;
-    margin-right: 25px;
-    padding: 12px;
-    font-family: 'Roboto';
-    color: white;
-    font-size: 20px;
-    border-radius: 15px;
-    margin-left: 15px;
-    margin-top: 190px;
-}
-
-.age {
-    position: absolute;
-    width: 30px;
-    margin-top: 215px;
-    margin-left: 332px;
-}
-
-.descriptionM {
-    grid-row: 5/span 2;
-    grid-column: 1/span 4;
-}
-
-#detailsM {
-    grid-row: 2/span 5;
-    grid-column: 5/span 3;
-    margin-top: 10px;
-    text-transform: capitalize;
-}
-
-#detailsM span {
-    float: right;
-}
-
-button.buyM, button.pirateM {
-    position: absolute;
-    margin-left: 500px;
-    width: 150px;
-    padding: 5px 20px;
-    background-color: #D6CEC6;
-    font-weight: 400;
-    font-size: 20px;
-    font-family: 'Roboto';
-    box-shadow: 2px 2px 1px black;
-    border: 1.5px solid black;
-}
-
-button.buyM {
-    margin-top: 315px;
-}
-
-button.pirateM {
-    margin-top: 370px;
-
-}
-
-@media all and (max-width: 770px) {
-
-    .modal-content {
-        display: block;
-        height:auto;
-        text-overflow:inherit;
-        text-align: left;
-        margin: 1em;
-        padding-top: 1em;
-
-}
-
-    .modalHide{
+    div.modal {
+        position: fixed;
         top: 0;
-        right: 0;
-        position: absolute;
-        margin-right: 2.4em;
-        margin-top: 1.8em;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(78, 78, 78, 0.6);
+        overflow: auto;
+    }
+
+
+
+    /* the modal  that needs to be changed for mobbile view */
+    .modal-content {
+        background-color: white;
+        width: 350px;
+        height: 450px;
+        padding: 0px 30px;
+        font-family: 'Times New Romans';
+        background-color: #DADADA;
+        margin: 0 auto;
+        margin-top: 100px;
+        height: auto;
+        padding-bottom: 2em;
+    }
 
 }
 
-button.buyM, button.pirateM {
- margin: 0;
-    padding: 0;
-    position: relative;
-    margin-bottom: 2em;
-    position: static;
+@media all and (min-width: 770px) {
 
-
-}
-    img.age{
-        margin:0;
+    button.buyM,
+    button.pirateM {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2em;
         position: static;
-        margin-bottom: 1em;
+    }
+
+    img.age {
+        position: absolute;
         float: right;
 
-}
-    img.thumbnailM{
-        margin:  auto;
-        padding: 0auto;
+    }
+
+    img.thumbnailM {
+        margin: auto;
+        padding-bottom: 30px;
         height: auto;
 
-}
+    }
+
+    .modal-content {
+        background-color: white;
+        width: 650px;
+        height: 450px;
+        display: grid;
+        grid-template-columns: repeat(7, 92.8px);
+        grid-template-rows: 80px repeat(6, 63.1px);
+        padding: 0px 30px;
+        font-family: 'Times New Romans';
+        background-color: #DADADA;
+        margin: 0 auto;
+        margin-top: 10em;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+    h3.titleM {
+        grid-row: 1/span 1;
+        grid-column: 1/span 7;
+        color: white;
+        padding: 10px 15px;
+        background-color: #002B45;
+        font-family: 'MS Reference Sans Serif';
+    }
+
+    .modalHide {
+        grid-row: 1/span 1;
+        grid-column: 5/span 1;
+        width: 48px;
+        height: 35px;
+        margin-top: 23px;
+        margin-left: 225px;
+        font-size: 30px;
+        background-color: #C3C3C3;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: 'Roboto';
+    }
+
+    img.thumbnailM {
+        grid-row: 2/span 3;
+        grid-column: 1/span 4;
+        width: 100%;
+    }
+
+    .metascoreM {
+        position: absolute;
+        margin-top: 10px;
+        margin-right: 25px;
+        padding: 12px;
+        font-family: 'Roboto';
+        color: white;
+        font-size: 20px;
+        border-radius: 15px;
+        margin-left: 15px;
+        margin-top: 190px;
+    }
+
+    .age {
+        position: absolute;
+        width: 30px;
+        margin-top: 215px;
+        margin-left: 332px;
+    }
+
+    .descriptionM {
+        grid-row: 5/span 2;
+        grid-column: 1/span 4;
+    }
+
+    #detailsM {
+        grid-row: 2/span 5;
+        grid-column: 5/span 3;
+        margin-top: 10px;
+        text-transform: capitalize;
+    }
+
+    #detailsM span {
+        float: right;
+    }
+
+    button.buyM,
+    button.pirateM {
+        position: absolute;
+        margin-left: 500px;
+        padding: 3px 20px;
+        height: 37px;
+        width: 150px;
+        padding: 10px 20px;
+        background-color: #C3C3C3;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: 'Roboto';
+    }
+
+    button.pirateM:hover {
+        cursor: pointer;
+        background-color: #002B45;
+        color: white;
+        border: 1px solid white;
+    }
+
+    button.buyM:hover {
+        cursor: pointer;
+        background-color: #002B45;
+        color: white;
+        border: 1px solid white;
+    }
+
+    button.buyM {
+        margin-top: 315px;
+    }
+
+    button.pirateM {
+        margin-top: 370px;
+
+    }
+
 
 }
 
 @media all and (min-width: 650px) {
-     header h1 {
+    header h1 {
         font-size: 60px;
     }
 }
 
-@media all and (min-width: 1110px ) {
+@media all and (min-width: 1110px) {
     header {
         background-size: cover;
     }
 }
 
 /*
-fetch the info
-to make the navbar sticky
-don't keep the buttons up
-more retro old school elem with the topbar
 question mark to games unrated yet
 metascore for modals
 pirate/buy removed for the unreleased game
