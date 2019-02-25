@@ -10,6 +10,7 @@ body {
     display: grid;
     grid-template-rows: 40px 300px 1fr;
     overflow-x: hidden;
+    background-color: #008080;
 }
 
 /* Header */
@@ -106,6 +107,7 @@ main article {
     height: 500px;
     border: 1px solid black;
     width: 300px;
+    background-color: white;
 }
 
 /* Top of flex item styling */
