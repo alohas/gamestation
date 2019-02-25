@@ -55,6 +55,8 @@ function displayGameData(item) {
 
 
     clone.querySelector(".metascore").textContent = item.gsx$metascore.$t;
+    console.log(item.gsx$metascore.$t);
+
     mClone.querySelector(".metascoreM").textContent = item.gsx$metascore.$t;
     if (item.gsx$metascore.$t >= 75) {
         clone.querySelector(".metascore").style.backgroundColor = "#11FF00";
@@ -63,7 +65,9 @@ function displayGameData(item) {
         clone.querySelector(".metascore").style.backgroundColor = "#FFE600";
         mClone.querySelector(".metascoreM").style.backgroundColor = "#FFE600";
     } else if (item.gsx$metascore.$t == false) {
-        clone.querySelector(".metascore").style.display = "none";
+
+        clone.querySelector(".metascore").textContent = "?";
+        clone.querySelector(".metascore").classList.add("unnanounced");
         mClone.querySelector(".metascoreM").style.display = "none";
     } else {
         clone.querySelector(".metascore").style.backgroundColor = "#f00";
@@ -91,6 +95,11 @@ function displayGameData(item) {
 
         clone.querySelector(".relDate").textContent = dateReleased;
 
+        if(!item.gsx$releasedate.$t) {
+        clone.querySelector(".relDate").parentElement.classList.add("comingSoon");
+         clone.querySelector(".relDate").parentElement.innerHTML = "COMING SOON";
+
+        }
         clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
 
     if (item.gsx$discount.$t) {

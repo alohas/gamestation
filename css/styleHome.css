@@ -1,0 +1,13 @@
+main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+}
+
+article img {
+    width: 60%;
+    margin-left: 25%;
+    border-radius: 100px;
+}
+
+

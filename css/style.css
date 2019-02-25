@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Faster+One');
+
 .hide {
     display: none;
 }
@@ -142,14 +144,21 @@ main article {
 /* Content of flex item styling */
 
 .metascore {
-    margin-top: 10px;
-    float: right;
-    margin-right: 25px;
+    margin-top: 100px;
+    margin-left: 230px;
+    position: absolute;
     padding: 12px;
     font-family: 'Roboto';
     color: white;
     font-size: 26px;
     border-radius: 15px;
+}
+
+.unnanounced {
+    color: black;
+    padding: 12px 20px;
+    font-family: 'Roboto';
+    border-style: dashed;
 }
 
 .shortDescription {
@@ -159,20 +168,47 @@ main article {
     font-size: 14px;
 }
 
-p:not(.shortDescription) {
+p:not(.shortDescription):not(.comingSoon) {
     margin-top: -10px;
     padding-left: 20px;
     line-height: 18px;
 }
 
+.comingSoon {
+    color: darkred;
+    font-family: 'All things must pass';
+    font-size: 24px;
+    position: absolute;
+    margin-top: -350px;
+    margin-left: 160px;
+    animation: zoomIn 5s infinite;
+    text-align: center;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: rotate(30deg);
+    }
+
+    50% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
 button.modalOpen {
     padding: 3px 20px;
-    height: 37px;
-    margin-left: -2px;
+    position: absolute;
     background-color: #C3C3C3;
     font-weight: 400;
     font-size: 18px;
     font-family: 'Roboto';
+    margin-top: 180px;
+    margin-left: 100px;
+    z-index: 1;
 }
 
 button.modalOpen:hover {
@@ -209,6 +245,7 @@ div.modal {
     width: 100%;
     background-color: rgba(78, 78, 78, 0.6);
     overflow: auto;
+    z-index: 2;
 }
 
 #detailsM {
@@ -219,42 +256,98 @@ div.modal {
 .modal-content {
     width: 280px;
     height: 450px;
-    padding: 0px 30px;
+    padding: 0px 20px;
     font-family: 'Times New Romans';
     background-color: #DADADA;
     margin: 0 auto;
     margin-top: 100px;
     height: auto;
-    padding-bottom: 2em;
+    padding-bottom: 10PX;
 }
 
 button.pirateM:hover {
-        cursor: pointer;
-        background-color: #002B45;
-        color: white;
-        border: 1px solid white;
-    }
+    cursor: pointer;
+    background-color: #002B45;
+    color: white;
+    border: 1px solid white;
+}
 
 button.buyM:hover {
-        cursor: pointer;
-        background-color: #002B45;
-        color: white;
-        border: 1px solid white;
-    }
+    cursor: pointer;
+    background-color: #002B45;
+    color: white;
+    border: 1px solid white;
+}
 
-    .buyM,
-    .pirateM {
-        width: 150px;
-        padding: 10px 20px;
-        background-color: #C3C3C3;
-        font-weight: 400;
-        font-size: 16px;
-        font-family: 'Roboto';
-        margin-bottom: 15px;
-        margin-left: 65px;
+aside {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+aside img {
+    width: 30px;
+}
+
+aside button {
+    padding: 10px 20px;
+    background-color: #C3C3C3;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'MS Reference Sans Serif';
+    box-shadow: 1px 1px 5px black;
+    margin-bottom: px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+aside button:hover {
+    cursor: pointer;
+    background-color: #002B45;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 1px 1px 10px black;
+}
+
+
+.buyM,
+.pirateM {
+    width: 150px;
+    padding: 10px 20px;
+    background-color: #C3C3C3;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-left: 65px;
+    font-family: 'MS Reference Sans Serif';
+    box-shadow: 1px 1px 5px black;
+}
+
+.modalHide {
+    position: absolute;
+    margin-top: -540px;
+    margin-left: 241px;
+    padding: 3px 10px;
+    font-size: 20px;
+    background-color: #C3C3C3;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Roboto';
+    box-shadow: 1px 1px 5px black;
+}
+
+.modalHide:hover {
+    cursor: pointer;
+    background-color: #002B45;
+    color: white;
+    border: 1px solid white;
 }
 
 @media screen and (min-width: 440px) {
+
+    .metascore {
+        margin-top: 160px;
+        margin-left: 330px;
+    }
 
     .shortDescription {
         margin-top: 10px;
@@ -264,13 +357,13 @@ button.buyM:hover {
     }
 
     button.modalOpen {
-        float: right;
-        margin-top: -60px;
-        margin-right: 25px;
+        margin-top: 170px;
+        margin-left: 180px;
         font-size: 18px;
         padding: 5px 25px;
         font-family: 'MS Reference Sans Serif';
         box-shadow: 1px 1px 5px black;
+        z-index: 1;
     }
 
     main article {
@@ -300,8 +393,8 @@ button.buyM:hover {
         font-size: 18px;
         font-family: 'Roboto';
         position: absolute;
-        margin-top: -543.5px;
-        margin-left: 245px;
+        margin-top: -542px;
+        margin-left: 240px;
     }
 
 }
@@ -327,8 +420,6 @@ button.buyM:hover {
         overflow: auto;
     }
 
-
-
     /* the modal  that needs to be changed for mobbile view */
     .modal-content {
         background-color: white;
@@ -343,30 +434,27 @@ button.buyM:hover {
         padding-bottom: 2em;
     }
 
+    img.thumbnailM {
+    width: 350px;
+}
+
+     .modalHide {
+        margin-top: -557px;
+        margin-left: 310px;
+    }
+
+    .buyM {
+        margin-left: 100px;
+    }
+
+    .age {
+        margin-left: 315px;
+    }
+
 }
 
 @media all and (min-width: 770px) {
 
-    button.buyM,
-    button.pirateM {
-        margin: 0;
-        padding: 0;
-        margin-bottom: 2em;
-        position: static;
-    }
-
-    img.age {
-        position: absolute;
-        float: right;
-
-    }
-
-    img.thumbnailM {
-        margin: auto;
-        padding-bottom: 30px;
-        height: auto;
-
-    }
 
     .modal-content {
         background-color: white;
@@ -400,7 +488,7 @@ button.buyM:hover {
         width: 48px;
         height: 35px;
         margin-top: 23px;
-        margin-left: 225px;
+        margin-left: 595px;
         font-size: 30px;
         background-color: #C3C3C3;
         font-weight: 400;
@@ -437,6 +525,7 @@ button.buyM:hover {
     .descriptionM {
         grid-row: 5/span 2;
         grid-column: 1/span 4;
+        padding-top: 30px;
     }
 
     #detailsM {
@@ -480,6 +569,7 @@ button.buyM:hover {
 
     button.buyM {
         margin-top: 315px;
+        padding-bottom: 30px;
     }
 
     button.pirateM {
@@ -500,15 +590,27 @@ button.buyM:hover {
     header {
         background-size: cover;
     }
+
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 0 auto;
+        justify-content: center;
+    }
 }
 
 /*
-question mark to games unrated yet
-metascore for modals
-pirate/buy removed for the unreleased game
-make it clear it is unreleased
-glitch
 font similar to windows 98
-same button styling
-add gradient to top cards
+
+- [ ] Add some more space around the button/ teacher suggest to put in in the bottom, teacher suggests to put the rating in the top or somewhere else.
+
+- [ ] Add  padding’s on the module long  description part.
+
+Teacher says to add a page about us.
+
+- [ ] Change picture in the preloaded.
+
+The alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable.
+
+- [ ] Add a clicked effect when a button is clicked so the user knows which button they pressed or on which  category they are
 */
