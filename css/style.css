@@ -10,6 +10,7 @@ body {
     display: grid;
     grid-template-rows: 40px 300px 1fr;
     overflow-x: hidden;
+    background-color: #008080;
 }
 
 
@@ -190,6 +191,7 @@ main article {
    height: 500px;
    border: 1px solid black;
    width: 300px;
+    background-color: #bfbfbf;
 }
 
 /* Top of flex item styling */
@@ -201,7 +203,7 @@ main article {
 
 #win95 {
     grid-row: 1/span 1;
-    background-color: #002B45;
+    background: linear-gradient(to right, #000080, #1084d0);
     color: white;
     display: inline;
 }
