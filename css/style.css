@@ -10,6 +10,7 @@ body {
     display: grid;
     grid-template-rows: 40px 300px 1fr;
     overflow-x: hidden;
+    background-color: #008080;
 }
 
 /* Header */
@@ -106,6 +107,7 @@ main article {
     height: 500px;
     border: 1px solid black;
     width: 300px;
+    background-color: white;
 }
 
 /* Top of flex item styling */
@@ -117,7 +119,7 @@ main article {
 
 #win95 {
     grid-row: 1/span 1;
-    background-color: #002B45;
+    background: linear-gradient(to right, #002B45, #1084d0);
     color: white;
     display: inline;
 }
@@ -248,10 +250,9 @@ button.buyM:hover {
         font-weight: 400;
         font-size: 16px;
         font-family: 'Roboto';
-    }
-
-
-
+        margin-bottom: 15px;
+        margin-left: 65px;
+}
 
 @media screen and (min-width: 440px) {
 
