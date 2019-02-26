@@ -16,3 +16,18 @@ function preloader(secs){
 
 
 //</preloader end ******************************
+
+
+// overlay for start button ******************************
+
+function on() {
+  document.getElementById("overlayW98").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlayW98").style.display = "none";
+}
+// overlay for start button ******************************
+
+
+// overlay for start button ******************************
