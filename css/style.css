@@ -13,6 +13,8 @@
 
 /* Overall Style */
 
+
+
 body {
     margin: 0;
     padding: 0;
@@ -77,6 +79,7 @@ header h2 {
 /* Navigation Bar */
 
 nav {
+    margin: 0;
     grid-row: 1/span 1;
     display: inline;
     grid-column: 2/span 2;
@@ -184,12 +187,14 @@ p:not(.shortDescription):not(.comingSoon) {
 .comingSoon {
     color: darkred;
     font-family: 'All things must pass';
-    font-size: 24px;
+    font-size: 17px;
     position: absolute;
-    margin-top: -350px;
-    margin-left: 160px;
+    margin-top: -59px;
+    margin-left: 85px;
     animation: zoomIn 5s infinite;
     text-align: center;
+    z-index: 0;
+    padding: 20px;
 }
 
 @keyframes zoomIn {
@@ -528,8 +533,8 @@ aside button:hover {
     .age {
         position: absolute;
         width: 30px;
-        margin-top: 215px;
-        margin-left: 332px;
+        margin-top: -77px;
+        margin-left: 271px;
     }
 
     .descriptionM {

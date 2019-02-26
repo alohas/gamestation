@@ -10,24 +10,7 @@ const openModal = document.querySelector("button.modalOpen");
 const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
 
-//the preloader *************************
-//var overlay = document.getElementById("overlay");
 
-//window.addEventListener("load" , function(){
-//overlay.style.display = "none";
-
-//})
-function preloader(secs){
-    if (secs >= 4) {
-      document.getElementById("overlay").style.display = "none";
-    } else {
-      setTimeout(function(){preloader(secs+1);},1000);
-    }
-  }
-  window.onload = preloader(0);
-
-
-//</preloader end ******************************
 
 
 
@@ -59,11 +42,11 @@ function displayGameData(item) {
 
     mClone.querySelector(".metascoreM").textContent = item.gsx$metascore.$t;
     if (item.gsx$metascore.$t >= 75) {
-        clone.querySelector(".metascore").style.backgroundColor = "#11FF00";
-        mClone.querySelector(".metascoreM").style.backgroundColor = "#11FF00";
+        clone.querySelector(".metascore").style.backgroundColor = "#6c3";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#6c3";
     } else if (item.gsx$metascore.$t >= 50) {
-        clone.querySelector(".metascore").style.backgroundColor = "#FFE600";
-        mClone.querySelector(".metascoreM").style.backgroundColor = "#FFE600";
+        clone.querySelector(".metascore").style.backgroundColor = "#fc3";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#fc3";
     } else if (item.gsx$metascore.$t == false) {
 
         clone.querySelector(".metascore").textContent = "?";
@@ -97,7 +80,7 @@ function displayGameData(item) {
 
         if(!item.gsx$releasedate.$t) {
         clone.querySelector(".relDate").parentElement.classList.add("comingSoon");
-         clone.querySelector(".relDate").parentElement.innerHTML = "COMING SOON";
+         clone.querySelector(".relDate").parentElement.innerHTML = "COMING <br> SOON";
 
         }
         clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
@@ -131,19 +114,19 @@ function displayGameData(item) {
 
 
 
-
-
-    if(item.gsx$agerange.$t>=18){
-        mClone.querySelector(".age").src = "images/age18.jpg"
+ if(item.gsx$agerange.$t>=18){
+        clone.querySelector(".age").src = "images/age18.jpg"
     } else if(item.gsx$agerange.$t>=16){
-        mClone.querySelector(".age").src = "images/age16.jpg"
+        clone.querySelector(".age").src = "images/age16.jpg"
     } else if(item.gsx$agerange.$t>=12){
-        mClone.querySelector(".age").src = "images/age12.jpg"
+        clone.querySelector(".age").src = "images/age12.jpg"
     } else if(item.gsx$agerange.$t>=7){
-        mClone.querySelector(".age").src = "images/age7.jpg"
+        clone.querySelector(".age").src = "images/age7.jpg"
     } else if(item.gsx$agerange.$t>=3){
-        mClone.querySelector(".age").src = "images/age3.jpg"
+        clone.querySelector(".age").src = "images/age3.jpg"
     }
+
+
 
     mClone.querySelector("div").setAttribute("id", item.gsx$id.$t);
 
