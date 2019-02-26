@@ -32,7 +32,7 @@ function displayGameData(item) {
 
 
     clone.querySelector(".thumbnail").src = "images/" + item.gsx$imagename.$t;
-    mClone.querySelector(".thumbnailM").src = "images/" + item.gsx$imagename.$t;
+
     clone.querySelector("h3.title").textContent = item.gsx$title.$t;
     mClone.querySelector("h3.titleM").textContent = item.gsx$title.$t;
 
@@ -111,6 +111,7 @@ function displayGameData(item) {
     mClone.querySelector(".modeM").textContent = item.gsx$mode.$t;
     mClone.querySelector(".platformM").textContent = item.gsx$platform.$t;
     mClone.querySelector(".descriptionM").textContent = item.gsx$description.$t;
+    mClone.querySelector(".trailer").src = item.gsx$trailer.$t;
 
 
 

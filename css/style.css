@@ -14,7 +14,6 @@
 /* Overall Style */
 
 
-
 body {
     margin: 0;
     padding: 0;
@@ -232,6 +231,13 @@ button.modalOpen:hover {
 
 /* Modal for mobile */
 
+
+
+.trailer{
+     width: 280px;
+}
+
+
 img.thumbnailM {
     width: 280px;
 }
@@ -336,7 +342,7 @@ aside button:hover {
 
 .modalHide {
     position: absolute;
-    margin-top: -540px;
+    margin-top: -54px;
     margin-left: 241px;
     padding: 3px 10px;
     font-size: 20px;
@@ -410,7 +416,7 @@ aside button:hover {
         font-size: 18px;
         font-family: 'Roboto';
         position: absolute;
-        margin-top: -542px;
+        margin-top: -56px;
         margin-left: 240px;
     }
 
@@ -451,13 +457,13 @@ aside button:hover {
         padding-bottom: 2em;
     }
 
-    img.thumbnailM {
+    .trailer {
     width: 350px;
 }
 
      .modalHide {
-        margin-top: -557px;
-        margin-left: 310px;
+        margin-top: -56px;
+        margin-left: 312px;
     }
 
     .buyM {
@@ -503,10 +509,10 @@ aside button:hover {
     .modalHide {
         grid-row: 1/span 1;
         grid-column: 5/span 1;
-        width: 48px;
+        width: 35px;
         height: 35px;
         margin-top: 23px;
-        margin-left: 595px;
+        margin-left: 611px;
         font-size: 30px;
         background-color: #C3C3C3;
         font-weight: 400;
@@ -514,7 +520,7 @@ aside button:hover {
         font-family: 'Roboto';
     }
 
-    img.thumbnailM {
+    .trailer {
         grid-row: 2/span 3;
         grid-column: 1/span 4;
         width: 100%;
@@ -536,8 +542,8 @@ aside button:hover {
     .age {
         position: absolute;
         width: 30px;
-        margin-top: -77px;
-        margin-left: 271px;
+        margin-top: -30px;
+        margin-left: 371px;
     }
 
     .descriptionM {

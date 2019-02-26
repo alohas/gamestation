@@ -26,7 +26,7 @@
 
 
     <aside>
-       <img src="stylingImages/pacman.png" style="position: absolute;">
+        <img src="stylingImages/pacman.png" style="position: absolute;">
         <button class="filter" data-filter="Adventure">Adventure</button>
         <button class="filter" data-filter="Strategy">Strategy</button>
         <button class="filter" data-filter="RPG">RPG</button>
@@ -59,7 +59,7 @@
             <button onclick="getIdShow(this.id)" class="modalOpen">Details</button>
             <h3 class="metascore">69</h3>
 
-             <img class="age" src="" alt="range">
+            <img class="age" src="" alt="range">
 
             <p class="shortDescription"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
             <p> <b> Genre: </b> <br> <span class="genre"> </span> </p>
@@ -75,7 +75,11 @@
         <div class="modal hide">
             <article class="modal-content">
                 <h3 class="titleM">name</h3>
-                <img class="thumbnailM" src="" alt="thumbnail">
+
+                <button class="modalHide" onclick="getIdHide(this.id)"> &times </button>
+
+                <iframe class="trailer" src="http://www.youtube.com/embed/W7qWa52k-nE" frameborder="0" allowfullscreen></iframe>
+
                 <h3 class="metascoreM hide">69</h3>
                 <div id="detailsM">
                     <p> Price: <span class="priceM">5</span> </p>
@@ -87,7 +91,7 @@
                     <p> Platform(s): <span class="platformM">wood-pc</span> </p>
                 </div>
                 <p class="descriptionM">don't buy this</p>
-                <button class="modalHide" onclick="getIdHide(this.id)"> &times </button>
+
                 <button class="buyM"> Buy </button>
             </article>
         </div>
