@@ -80,7 +80,7 @@ function displayGameData(item) {
 
         if(!item.gsx$releasedate.$t) {
         clone.querySelector(".relDate").parentElement.classList.add("comingSoon");
-         clone.querySelector(".relDate").parentElement.innerHTML = "COMING SOON";
+         clone.querySelector(".relDate").parentElement.innerHTML = "COMING <br> SOON";
 
         }
         clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
