@@ -107,7 +107,15 @@ function displayGameData(item) {
     mClone.querySelector(".genresM").textContent = item.gsx$genre.$t;
     mClone.querySelector(".developerM").textContent = item.gsx$developer.$t;
     mClone.querySelector(".publisherM").textContent = item.gsx$publisher.$t;
-    mClone.querySelector(".relDateM").textContent = dateReleased;
+
+
+
+    if(item.gsx$releasedate.$t){
+        mClone.querySelector(".relDateM").textContent = dateReleased;
+    } else{
+         mClone.querySelector(".relDateM").textContent = "Unknown";
+    }
+
     mClone.querySelector(".modeM").textContent = item.gsx$mode.$t;
     mClone.querySelector(".platformM").textContent = item.gsx$platform.$t;
     mClone.querySelector(".descriptionM").textContent = item.gsx$description.$t;
