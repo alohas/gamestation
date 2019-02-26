@@ -42,11 +42,11 @@ function displayGameData(item) {
 
     mClone.querySelector(".metascoreM").textContent = item.gsx$metascore.$t;
     if (item.gsx$metascore.$t >= 75) {
-        clone.querySelector(".metascore").style.backgroundColor = "#11FF00";
-        mClone.querySelector(".metascoreM").style.backgroundColor = "#11FF00";
+        clone.querySelector(".metascore").style.backgroundColor = "#6c3";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#6c3";
     } else if (item.gsx$metascore.$t >= 50) {
-        clone.querySelector(".metascore").style.backgroundColor = "#FFE600";
-        mClone.querySelector(".metascoreM").style.backgroundColor = "#FFE600";
+        clone.querySelector(".metascore").style.backgroundColor = "#fc3";
+        mClone.querySelector(".metascoreM").style.backgroundColor = "#fc3";
     } else if (item.gsx$metascore.$t == false) {
 
         clone.querySelector(".metascore").textContent = "?";
