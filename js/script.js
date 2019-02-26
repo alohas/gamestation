@@ -57,33 +57,33 @@ function displayGameData(item) {
         mClone.querySelector(".metascoreM").style.backgroundColor = "#f00";
     }
 
-        /* Genre and Release Date Converter added */
+    /* Genre and Release Date Converter added */
 
-        clone.querySelector(".genre").textContent = item.gsx$genre.$t;
+    clone.querySelector(".genre").textContent = item.gsx$genre.$t;
 
-        var dateToConvert = new Date(item.gsx$releasedate.$t);
+    var dateToConvert = new Date(item.gsx$releasedate.$t);
 
-        var monthsTotal = [
+    var monthsTotal = [
     "January", "February", "March",
     "April", "May", "June", "July",
     "August", "September", "October",
     "November", "December"
   ];
 
-        var date = dateToConvert.getDate();
-        var month = dateToConvert.getMonth();
-        var year = dateToConvert.getFullYear();
+    var date = dateToConvert.getDate();
+    var month = dateToConvert.getMonth();
+    var year = dateToConvert.getFullYear();
 
-        var dateReleased = date + " " + monthsTotal[month] + " " + year;
+    var dateReleased = date + " " + monthsTotal[month] + " " + year;
 
-        clone.querySelector(".relDate").textContent = dateReleased;
+    clone.querySelector(".relDate").textContent = dateReleased;
 
-        if(!item.gsx$releasedate.$t) {
+    if (!item.gsx$releasedate.$t) {
         clone.querySelector(".relDate").parentElement.classList.add("comingSoon");
-         clone.querySelector(".relDate").parentElement.innerHTML = "COMING <br> SOON";
+        clone.querySelector(".relDate").parentElement.innerHTML = "COMING <br> SOON";
 
-        }
-        clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
+    }
+    clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
 
     if (item.gsx$discount.$t) {
         clone.querySelector(".price").textContent = Math.round(item.gsx$price.$t * (1 - item.gsx$discount.$t / 100)) + " Eur";
@@ -115,15 +115,15 @@ function displayGameData(item) {
 
 
 
- if(item.gsx$agerange.$t>=18){
+    if (item.gsx$agerange.$t >= 18) {
         clone.querySelector(".age").src = "images/age18.jpg"
-    } else if(item.gsx$agerange.$t>=16){
+    } else if (item.gsx$agerange.$t >= 16) {
         clone.querySelector(".age").src = "images/age16.jpg"
-    } else if(item.gsx$agerange.$t>=12){
+    } else if (item.gsx$agerange.$t >= 12) {
         clone.querySelector(".age").src = "images/age12.jpg"
-    } else if(item.gsx$agerange.$t>=7){
+    } else if (item.gsx$agerange.$t >= 7) {
         clone.querySelector(".age").src = "images/age7.jpg"
-    } else if(item.gsx$agerange.$t>=3){
+    } else if (item.gsx$agerange.$t >= 3) {
         clone.querySelector(".age").src = "images/age3.jpg"
     }
 
@@ -153,17 +153,28 @@ function showModal(id) {
     } else if (id < 20) {
         const modal = document.querySelector("div#\\31 " + (id - 10));
         modal.classList.remove("hide");
+    } else if (id < 30) {
+        const modal = document.querySelector("div#\\32 " + (id - 20));
+        modal.classList.remove("hide");
     }
 }
 
 function hideModal(id) {
+
     if (id < 10) {
         const modal = document.querySelector("div#\\3" + id);
         modal.classList.add("hide");
+        stopVideo(modal);
     } else if (id < 20) {
         const modal = document.querySelector("div#\\31 " + (id - 10));
         modal.classList.add("hide");
+        stopVideo(modal);
+    } else if (id < 30) {
+        const modal = document.querySelector("div#\\32 " + (id - 20));
+        modal.classList.add("hide")
+        stopVideo(modal);
     }
+
 }
 
 loadJSON(link);
@@ -187,4 +198,17 @@ function filterOut(a) {
         })
 
     });
+};
+
+
+var stopVideo = function ( element ) {
+	var iframe = element.querySelector( 'iframe');
+	var video = element.querySelector( 'video' );
+	if ( iframe ) {
+		var iframeSrc = iframe.src;
+		iframe.src = iframeSrc;
+	}
+	if ( video ) {
+		video.pause();
+	}
 };

@@ -233,18 +233,15 @@ button.modalOpen:hover {
 
 
 
-.trailer{
-     width: 280px;
-}
-
-
-img.thumbnailM {
+.trailer {
     width: 280px;
 }
 
+
+
 .titleM {
     color: white;
-    background-color: #002B45;
+    background: linear-gradient(to right, #002B45, #1084d0);
     padding: 10px 20px;
 }
 
@@ -458,10 +455,11 @@ aside button:hover {
     }
 
     .trailer {
-    width: 350px;
-}
+        width: 350px;
+        height: 217px;
+    }
 
-     .modalHide {
+    .modalHide {
         margin-top: -56px;
         margin-left: 312px;
     }
@@ -493,7 +491,8 @@ aside button:hover {
         margin: 0 auto;
         margin-top: 10em;
         height: auto;
-        padding-bottom: 2em;
+        padding-bottom: 4em;
+
 
     }
 
@@ -511,8 +510,8 @@ aside button:hover {
         grid-column: 5/span 1;
         width: 35px;
         height: 35px;
-        margin-top: 23px;
-        margin-left: 611px;
+        margin-top: 22px;
+        margin-left: 609px;
         font-size: 30px;
         background-color: #C3C3C3;
         font-weight: 400;
@@ -524,6 +523,7 @@ aside button:hover {
         grid-row: 2/span 3;
         grid-column: 1/span 4;
         width: 100%;
+        height: 192px;
     }
 
     .metascoreM {
@@ -634,7 +634,6 @@ aside button:hover {
 
 - add  padding’s and line-height on the module long  description part ( Brigi )
 
-- change picture in the preloaded and take care of it ( Now )
 
 - the alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable. ( Together )
 
@@ -654,11 +653,10 @@ aside button:hover {
 
 - add glitch animation to the start button ( short ) or an error ( Clyde )
 
-- trailer in the modal ( Dom )
-
 - metacritic added to the scores ( Clyde )
 
 - fix homepage ( Together ) - we look likes users, description, inconsistent, too long text on the cards
 
+-add favicon ( ???????? )
 
 */
