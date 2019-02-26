@@ -610,18 +610,36 @@ aside button:hover {
 }
 
 /*
-for gamers by gamers not big enough on wide screens
-font similar to windows 98
 
-- [ ] Add some more space around the button/ teacher suggest to put in in the bottom, teacher suggests to put the rating in the top or somewhere else.
+- add  padding’s and line-height on the module long  description part ( Brigi )
 
-- [ ] Add  padding’s on the module long  description part.
+- change picture in the preloaded and take care of it ( Now )
 
-Teacher says to add a page about us.
+- the alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable. ( Together )
 
-- [ ] Change picture in the preloaded.
+- links in the buy ( Dom )
 
-The alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable.
+- coming soon corrected/ delete details maybe ( Brigi )
 
-- [ ] Add a clicked effect when a button is clicked so the user knows which button they pressed or on which  category they are
+- genre corrected for placements ( Together )
+
+- spreadsheet short description/ long description ( Brigi )
+
+- zoo tycoon some middle rated game instead/ zoo tycoon new ( Brigi )
+
+- fixed x button in the modal ( not responsive enough ) ( Brigi )
+
+- typography consistent' ( Together )
+
+- add glitch animation to the start button ( short ) or an error ( Clyde )
+
+- trailer in the modal ( Dom )
+
+- add age range in the cards ( Dom )
+
+- metacritic added to the scores ( Clyde )
+
+- fix homepage ( Together ) - we look likes users, description, inconsistent, too long text on the cards
+
+
 */
