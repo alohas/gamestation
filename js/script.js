@@ -114,19 +114,19 @@ function displayGameData(item) {
 
 
 
-
-
-    if(item.gsx$agerange.$t>=18){
-        mClone.querySelector(".age").src = "images/age18.jpg"
+ if(item.gsx$agerange.$t>=18){
+        clone.querySelector(".age").src = "images/age18.jpg"
     } else if(item.gsx$agerange.$t>=16){
-        mClone.querySelector(".age").src = "images/age16.jpg"
+        clone.querySelector(".age").src = "images/age16.jpg"
     } else if(item.gsx$agerange.$t>=12){
-        mClone.querySelector(".age").src = "images/age12.jpg"
+        clone.querySelector(".age").src = "images/age12.jpg"
     } else if(item.gsx$agerange.$t>=7){
-        mClone.querySelector(".age").src = "images/age7.jpg"
+        clone.querySelector(".age").src = "images/age7.jpg"
     } else if(item.gsx$agerange.$t>=3){
-        mClone.querySelector(".age").src = "images/age3.jpg"
+        clone.querySelector(".age").src = "images/age3.jpg"
     }
+
+
 
     mClone.querySelector("div").setAttribute("id", item.gsx$id.$t);
 
