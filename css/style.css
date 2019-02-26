@@ -279,7 +279,7 @@ div.modal {
     margin: 0 auto;
     margin-top: 100px;
     height: auto;
-    padding-bottom: 10PX;
+    padding-bottom: 10px;
 }
 
 
@@ -318,7 +318,8 @@ aside button:hover {
     box-shadow: 1px 1px 10px black;
 }
 
-.buyM {
+a.buyM {
+    color: black;
     text-decoration: none;
     width: 150px;
     padding: 10px 20px;
@@ -326,7 +327,7 @@ aside button:hover {
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 15px;
-    margin-left: 65px;
+    margin-left: 100px;
     font-family: 'MS Reference Sans Serif';
     box-shadow: 1px 1px 5px black;
 }
@@ -437,13 +438,13 @@ aside button:hover {
         background-color: white;
         width: 350px;
         height: 450px;
-        padding: 0px 30px;
+        padding: 20px 30px;
         font-family: 'Times New Romans';
         background-color: #DADADA;
         margin: 0 auto;
         margin-top: 100px;
         height: auto;
-        padding-bottom: 2em;
+
     }
 
     .trailer {
@@ -456,8 +457,10 @@ aside button:hover {
         margin-left: 312px;
     }
 
-    .buyM {
-        margin-left: 100px;
+    a.buyM {
+        margin-left: 140px;
+        margin-top: 50px;
+        font-family: 'MS Reference Sans Serif';
     }
 
 
@@ -555,44 +558,19 @@ aside button:hover {
         float: right;
     }
 
-    button.buyM,
-    button.pirateM {
-        position: absolute;
+    a.buyM {
         margin-left: 500px;
-        padding: 3px 20px;
-        height: 37px;
-        width: 150px;
-        padding: 10px 20px;
-        background-color: #C3C3C3;
-        font-weight: 400;
-        font-size: 18px;
-        font-family: 'Roboto';
+        margin-top: 60px;
+        padding: 20px 10px;
     }
 
-    button.pirateM:hover {
+
+    a.buyM:hover {
         cursor: pointer;
         background-color: #002B45;
         color: white;
         border: 1px solid white;
     }
-
-    button.buyM:hover {
-        cursor: pointer;
-        background-color: #002B45;
-        color: white;
-        border: 1px solid white;
-    }
-
-    button.buyM {
-        margin-top: 315px;
-        padding-bottom: 30px;
-    }
-
-    button.pirateM {
-        margin-top: 370px;
-
-    }
-
 
 }
 
