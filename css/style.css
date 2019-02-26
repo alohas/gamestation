@@ -462,6 +462,9 @@ aside button:hover {
 
 @media all and (min-width: 770px) {
 
+    header h2 {
+        font-size: 26px;
+    }
 
     .modal-content {
         background-color: white;
@@ -607,6 +610,7 @@ aside button:hover {
 }
 
 /*
+for gamers by gamers not big enough on wide screens
 font similar to windows 98
 
 - [ ] Add some more space around the button/ teacher suggest to put in in the bottom, teacher suggests to put the rating in the top or somewhere else.
