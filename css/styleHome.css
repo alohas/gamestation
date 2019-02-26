@@ -10,3 +10,8 @@ article img {
 }
 
 
+#message{
+    margin: 0;
+    background-color: black;
+    padding: 0;
+}

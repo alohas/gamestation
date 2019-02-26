@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Faster+One');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+    font-family: 'All Things Must Pass';
+    src: url("../fonts/allThingsMustPass.ttf");
+}
 
 .hide {
     display: none;
