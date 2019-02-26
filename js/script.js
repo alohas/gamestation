@@ -112,7 +112,7 @@ function displayGameData(item) {
     mClone.querySelector(".platformM").textContent = item.gsx$platform.$t;
     mClone.querySelector(".descriptionM").textContent = item.gsx$description.$t;
     mClone.querySelector(".trailer").src = item.gsx$trailer.$t;
-
+    mClone.querySelector(".buyM").href = item.gsx$link.$t;
 
 
     if (item.gsx$agerange.$t >= 18) {
