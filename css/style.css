@@ -85,9 +85,9 @@ nav {
     grid-column: 2/span 2;
 }
 
-nav a {
+/*nav a {
     all: unset;
-}
+}*/
 
 nav button {
     padding: 3px 20px;
@@ -306,7 +306,6 @@ aside button {
     font-size: 16px;
     font-family: 'MS Reference Sans Serif';
     box-shadow: 1px 1px 5px black;
-    margin-bottom: px;
     margin-left: 15px;
     margin-top: 15px;
 }
@@ -630,7 +629,6 @@ aside button:hover {
 
 - the alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable. ( Together )
 
-- links in the buy ( Dom )
 
 - coming soon corrected/ delete details maybe ( Brigi )
 
