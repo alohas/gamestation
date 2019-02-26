@@ -16,3 +16,10 @@ function preloader(secs){
 
 
 //</preloader end ******************************
+function on() {
+  document.getElementById("overlayW98").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlayW98").style.display = "none";
+}
