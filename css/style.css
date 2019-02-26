@@ -14,7 +14,6 @@
 /* Overall Style */
 
 
-
 body {
     margin: 0;
     padding: 0;
@@ -40,7 +39,7 @@ body {
 
 .sticky {
     position: sticky;
-    top: 0px;
+    top: 0;
 }
 
 .start {
@@ -75,6 +74,7 @@ h2 {
 header h2 {
     font-size: 20px;
 }
+
 
 /* Navigation Bar */
 
@@ -184,6 +184,7 @@ p:not(.shortDescription):not(.comingSoon) {
     line-height: 18px;
 }
 
+
 .comingSoon {
     color: darkred;
     font-family: 'All things must pass';
@@ -232,13 +233,17 @@ button.modalOpen:hover {
 
 /* Modal for mobile */
 
-img.thumbnailM {
+
+
+.trailer {
     width: 280px;
 }
 
+
+
 .titleM {
     color: white;
-    background-color: #002B45;
+    background: linear-gradient(to right, #002B45, #1084d0);
     padding: 10px 20px;
 }
 
@@ -277,14 +282,8 @@ div.modal {
     padding-bottom: 10PX;
 }
 
-button.pirateM:hover {
-    cursor: pointer;
-    background-color: #002B45;
-    color: white;
-    border: 1px solid white;
-}
 
-button.buyM:hover {
+a.buyM:hover {
     cursor: pointer;
     background-color: #002B45;
     color: white;
@@ -320,9 +319,8 @@ aside button:hover {
     box-shadow: 1px 1px 10px black;
 }
 
-
-.buyM,
-.pirateM {
+.buyM {
+    text-decoration: none;
     width: 150px;
     padding: 10px 20px;
     background-color: #C3C3C3;
@@ -336,7 +334,7 @@ aside button:hover {
 
 .modalHide {
     position: absolute;
-    margin-top: -540px;
+    margin-top: -54px;
     margin-left: 241px;
     padding: 3px 10px;
     font-size: 20px;
@@ -364,7 +362,6 @@ aside button:hover {
     .shortDescription {
         margin-top: 10px;
         padding: 20px;
-        font-family: 'MS Reference Sans Serif';
         font-size: 17px;
     }
 
@@ -373,7 +370,6 @@ aside button:hover {
         margin-left: 180px;
         font-size: 18px;
         padding: 5px 25px;
-        font-family: 'MS Reference Sans Serif';
         box-shadow: 1px 1px 5px black;
         z-index: 1;
     }
@@ -410,7 +406,7 @@ aside button:hover {
         font-size: 18px;
         font-family: 'Roboto';
         position: absolute;
-        margin-top: -542px;
+        margin-top: -56px;
         margin-left: 240px;
     }
 
@@ -451,13 +447,14 @@ aside button:hover {
         padding-bottom: 2em;
     }
 
-    img.thumbnailM {
-    width: 350px;
-}
+    .trailer {
+        width: 350px;
+        height: 217px;
+    }
 
-     .modalHide {
-        margin-top: -557px;
-        margin-left: 310px;
+    .modalHide {
+        margin-top: -56px;
+        margin-left: 312px;
     }
 
     .buyM {
@@ -487,7 +484,8 @@ aside button:hover {
         margin: 0 auto;
         margin-top: 10em;
         height: auto;
-        padding-bottom: 2em;
+        padding-bottom: 4em;
+
 
     }
 
@@ -503,10 +501,10 @@ aside button:hover {
     .modalHide {
         grid-row: 1/span 1;
         grid-column: 5/span 1;
-        width: 48px;
+        width: 35px;
         height: 35px;
-        margin-top: 23px;
-        margin-left: 595px;
+        margin-top: 22px;
+        margin-left: 609px;
         font-size: 30px;
         background-color: #C3C3C3;
         font-weight: 400;
@@ -514,10 +512,11 @@ aside button:hover {
         font-family: 'Roboto';
     }
 
-    img.thumbnailM {
+    .trailer {
         grid-row: 2/span 3;
         grid-column: 1/span 4;
         width: 100%;
+        height: 192px;
     }
 
     .metascoreM {
@@ -536,8 +535,8 @@ aside button:hover {
     .age {
         position: absolute;
         width: 30px;
-        margin-top: -77px;
-        margin-left: 271px;
+        margin-top: -30px;
+        margin-left: 371px;
     }
 
     .descriptionM {
@@ -628,7 +627,6 @@ aside button:hover {
 
 - add  padding’s and line-height on the module long  description part ( Brigi )
 
-- change picture in the preloaded and take care of it ( Now )
 
 - the alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable. ( Together )
 
@@ -648,13 +646,12 @@ aside button:hover {
 
 - add glitch animation to the start button ( short ) or an error ( Clyde )
 
-- trailer in the modal ( Dom )
-
-- add age range in the cards ( Dom )
-
 - metacritic added to the scores ( Clyde )
 
 - fix homepage ( Together ) - we look likes users, description, inconsistent, too long text on the cards
+
+-add favicon ( ???????? )
+
 
 
 */
