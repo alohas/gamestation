@@ -245,8 +245,8 @@ img.thumbnailM {
 .age {
     width: 30px;
     position: absolute;
-    margin-top: -250px;
-    margin-left: 245px;
+    margin-top: -77px;
+    margin-left: 271px;
 }
 
 div.modal {
@@ -385,6 +385,11 @@ aside button:hover {
         width: 400px;
     }
 
+    .age {
+        margin-top: -30px;
+        margin-left: 371px;
+    }
+
     /* Glitchy Effect */
 
     #onTopGlitch {
@@ -459,9 +464,7 @@ aside button:hover {
         margin-left: 100px;
     }
 
-    .age {
-        margin-left: 315px;
-    }
+
 
 }
 
