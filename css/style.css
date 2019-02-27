@@ -151,7 +151,7 @@ main article {
     padding: 0px;
 }
 
-/* Content of flex item styling */
+/* Content of article */
 
 .metascore {
     margin-top: 100px;
@@ -171,6 +171,8 @@ main article {
     border-style: dashed;
 }
 
+/* Paragraphs in article */
+
 .shortDescription {
     padding: 20px;
     margin-top: -35px;
@@ -179,9 +181,11 @@ main article {
 }
 
 p:not(.shortDescription):not(.comingSoon) {
-    margin-top: -10px;
+    margin-top: -25px;
     padding-left: 20px;
-    line-height: 18px;
+    margin-bottom: 30px;
+    font-family: 'MS Reference Sans Serif';
+    font-size: 15px;
 }
 
 
@@ -190,8 +194,8 @@ p:not(.shortDescription):not(.comingSoon) {
     font-family: 'All things must pass';
     font-size: 17px;
     position: absolute;
-    margin-top: -59px;
-    margin-left: 85px;
+    margin-top: -80px;
+    margin-left: 150px;
     animation: zoomIn 5s infinite;
     text-align: center;
     z-index: 0;
@@ -233,13 +237,9 @@ button.modalOpen:hover {
 
 /* Modal for mobile */
 
-
-
 .trailer {
     width: 280px;
 }
-
-
 
 .titleM {
     color: white;
@@ -267,7 +267,7 @@ div.modal {
 
 #detailsM {
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .modal-content {
@@ -277,9 +277,9 @@ div.modal {
     font-family: 'Times New Romans';
     background-color: #DADADA;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 30px;
     height: auto;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 
@@ -433,6 +433,10 @@ a.buyM {
         overflow: auto;
     }
 
+    .descriptionM {
+        line-height: 23px;
+    }
+
     /* the modal  that needs to be changed for mobbile view */
     .modal-content {
         background-color: white;
@@ -442,9 +446,9 @@ a.buyM {
         font-family: 'Times New Romans';
         background-color: #DADADA;
         margin: 0 auto;
-        margin-top: 100px;
+        margin-top: 30px;
         height: auto;
-
+        padding-bottom: 30px;
     }
 
     .trailer {
@@ -544,7 +548,7 @@ a.buyM {
     .descriptionM {
         grid-row: 5/span 2;
         grid-column: 1/span 4;
-        padding-top: 30px;
+        padding-top: 40px;
     }
 
     #detailsM {
@@ -559,9 +563,11 @@ a.buyM {
     }
 
     a.buyM {
-        margin-left: 500px;
-        margin-top: 60px;
-        padding: 20px 10px;
+        height: 25px;
+        width: 70px;
+        padding-left: 50px;
+        margin-top: 0px;
+        margin-left: 510px;
     }
 
 
@@ -594,29 +600,11 @@ a.buyM {
 }
 
 
-
-
-
-
-
-
 /*
-
-- add  padding’s and line-height on the module long  description part ( Brigi )
-
 
 - the alignment is strange in the module, teacher suggest to add some colour on the text that says price genre etc in the module, to make it a bit more readable. ( Together )
 
-
-- coming soon corrected/ delete details maybe ( Brigi )
-
 - genre corrected for placements ( Together )
-
-- spreadsheet short description/ long description ( Brigi )
-
-- zoo tycoon some middle rated game instead/ zoo tycoon new ( Brigi )
-
-- fixed x button in the modal ( not responsive enough ) ( Brigi )
 
 - typography consistent' ( Together )
 
@@ -625,9 +613,5 @@ a.buyM {
 - metacritic added to the scores ( Clyde )
 
 - fix homepage ( Together ) - we look likes users, description, inconsistent, too long text on the cards
-
--add favicon ( ???????? )
-
-
 
 */

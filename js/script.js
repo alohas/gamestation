@@ -10,10 +10,6 @@ const openModal = document.querySelector("button.modalOpen");
 const link = "https://spreadsheets.google.com/feeds/list/1StRDepKGILfDQMA7R8IXMSQUUZgsF7OL1uySCIfBLh4/od6/public/values?alt=json";
 
 
-
-
-
-
 function loadJSON(link) {
     fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayGameData));
 }
@@ -81,6 +77,7 @@ function displayGameData(item) {
     if (!item.gsx$releasedate.$t) {
         clone.querySelector(".relDate").parentElement.classList.add("comingSoon");
         clone.querySelector(".relDate").parentElement.innerHTML = "COMING <br> SOON";
+        clone.querySelector(".modalOpen").classList.add("hide");
 
     }
     clone.querySelector(".shortDescription").textContent = item.gsx$shortdescription.$t;
