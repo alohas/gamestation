@@ -6,7 +6,7 @@
 
 //})
 function preloader(secs){
-    if (secs >= 4) {
+    if (secs >= 3) {
       document.getElementById("overlay").style.display = "none";
     } else {
       setTimeout(function(){preloader(secs+1);},1000);
