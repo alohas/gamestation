@@ -217,3 +217,13 @@ var stopVideo = function ( element ) {
 		video.pause();
 	}
 };
+// overlay for start button ******************************
+
+function on() {
+  document.getElementById("overlayW98").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlayW98").style.display = "none";
+}
+// overlay for start button ******************************
