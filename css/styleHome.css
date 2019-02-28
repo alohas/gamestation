@@ -324,6 +324,6 @@ article h6 {
     color: white;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    height: 60%;
-    width: 60%;
+    height: 45%;
+    width: 45%;
 }
