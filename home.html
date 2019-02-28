@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gamestation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    main article {
+        width: 330px;
+        height: 450px;
+        border: 0px;
+    }
+
+    body {
+        font-family: 'MS Reference Sans Serif';
+        background-image: url("images/wallpaper.jpg");
+        background-size: cover;
+    }
+
+    aside {
+        display: block;
+    }
+
+    h3 {
+        color: white;
+        padding: 20px 35px;
+        margin-top: 0px;
+    }
+
+    article h4 {
+        background: linear-gradient(to right, #002B45, #1084d0);
+        color: white;
+        display: inline;
+        padding: 10px 5px;
+        display: flex;
+        margin-top: -10px;
+    }
+
+    header {
+        all: unset;
+    }
+
+    @media screen and (min-width: 650px) {
+        h3 {
+            padding: 10px 95px;
+        }
+    }
+
+    @media screen and (min-width: 750px) {
+        article.introduction p {
+            font-size: 20px;
+        }
+    }
+
+</style>
+
+<body>
+
+
+
+
+    <div id="overlayW98" onclick="off()">
+        <img src="damn.gif" alt="pic" id="imgW98"></div>
+
+
+
+
+
+
+    <div id="blackHeader" class="sticky">
+        <img src="">
+        <button class="start" onclick="on()"> </button>
+        <nav>
+            <a href="#"> <button style="background-color: #002B45; color: white;"> Home </button></a>
+            <a href="picks.html"> <button> Game Picks </button> </a>
+        </nav>
+    </div> <!-- here is inserted the logo -->
+
+    <header>
+        <h1>gamestation</h1>
+        <h2>For gamers by gamers</h2>
+    </header>
+
+
+
+
+
+
+
+
+
+    <h2>About Us</h2>
+
+    <main>
+        <article class="introduction">
+            <h4 class="introd"> Introduction</h4>
+            <img class="profile" src="images/logo.png" alt="dk">
+            <h5>/* Hey you. You who found our website. What is this supposed to be, right? We're a team of four oriented towards design and web development. Being also passionate about games and computers led us to trying to revive an era. So we have built, step by step a genuine copy of the old school Windows, trying to incorporate as many elements as our imagination could provide. In case you wondered who are the masterminds of this project you can check it out down below. */ </h5>
+        </article>
+
+        <h2 style="width: 100%;">The Creators</h2>
+
+        <article class="bio">
+            <h4 class="name">Dominykas "alohas" Kutka</h4>
+            <img class="profile" src="images/do.jpg" alt="dk">
+            <h6>I am Multimedia Design and Communication student at Kea in Copenhagen. I would describe myself as a casual gamer. However, I play a lot of competitive games. I try almost all of the new games from big developer studies but I don't forget the indie developers too. My favourite game genres are Racing and strategy.</h6>
+        </article>
+        <article class="bio">
+            <h4 class="name">Klajdi "rainFalls" Ajdini</h4>
+            <img class="profile" src="images/ka.jpg" alt="ka">
+            <h6>Hello, I am an student studying in Copenhagen. Aside from studying I like playing games from time to time, even though I don’t play all the latest games that come out, I know a lot about them.I mostly like the games that look pretty, meaning that I like the games that have nice graphics aside from nice gameplay. My favorite game battlefield IV.</h6>
+        </article>
+        <article class="bio">
+            <h4 class="name">Brigitta "[;]" Rucz</h4>
+            <img class="profile" src="images/rb.jpg" alt="br">
+            <h6>Currently studying MMD along with my fellow team members. I like innovation and great ideas. I love to play around by coding. Last but not least, I enjoy some good relaxation that games offer. League of Legends, World of Warcraft and other single-player games with graphics worth big awards.</h6>
+        </article>
+        <article class="bio">
+            <h4 class="profile" class="name">Karolina "karo" Valentová</h4>
+            <img src="images/kv.jpg" alt="kv">
+            <h6>I am a student of multimedia design. I like to spend my free time with painting, drawing or playing video games. I’m very picky with games, my prefference is non-hiperrealistic look and interesting storyline. My favourite games are Skyrim, Beyond good and evil, Spyro and Lego series.</h6>
+        </article>
+    </main>
+
+    <script>
+        function on() {
+            document.getElementById("overlayW98").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("overlayW98").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
